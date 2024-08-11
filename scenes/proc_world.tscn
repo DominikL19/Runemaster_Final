@@ -20,12 +20,11 @@ frequency = 0.0106
 color_ramp = SubResource("Gradient_flmub")
 noise = SubResource("FastNoiseLite_s6vgf")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ah1e7"]
-frequency = 0.35
-fractal_octaves = 1
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jmq35"]
+frequency = 0.3051
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5uqwc"]
-noise = SubResource("FastNoiseLite_ah1e7")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nax57"]
+noise = SubResource("FastNoiseLite_jmq35")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rbg1a"]
 atlas = ExtResource("4_7scnw")
@@ -403,7 +402,7 @@ size = Vector2(12, 4)
 y_sort_enabled = true
 script = ExtResource("1_dvum6")
 noise_height_texture = SubResource("NoiseTexture2D_2k771")
-noise_tree_texture = SubResource("NoiseTexture2D_5uqwc")
+noise_point_texture = SubResource("NoiseTexture2D_nax57")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
