@@ -18,6 +18,11 @@ config/icon="res://assets/icon.svg"
 [display]
 
 window/stretch/scale=4.0
+mouse_cursor/custom_image="res://assets/UI/cursor_pressed.png"
+
+[dotnet]
+
+project/assembly_name="Runemaster"
 
 [input]
 
