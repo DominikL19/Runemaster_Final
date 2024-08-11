@@ -57,13 +57,36 @@ func generate_world():
 					if world_noise_val < 0.3:
 						if 0.1 < point_noise_val and point_noise_val < 0.12:
 							plant_placement(Vector2i(0, 0), 6, environment_layer, Vector2i(x, y))
-						if 0.12 < point_noise_val and point_noise_val < 0.15:
+						if 0.12 < point_noise_val and point_noise_val < 0.13:
 							plant_placement(Vector2i(1, 0), 6, environment_layer, Vector2i(x, y))
-						if 0.15 < point_noise_val and point_noise_val < 0.16:
+						if 0.13 < point_noise_val and point_noise_val < 0.14:
 							plant_placement(Vector2i(3, 0), 6, environment_layer, Vector2i(x, y))
-						if 0.16 < point_noise_val and point_noise_val < 0.17:
+						if 0.14 < point_noise_val and point_noise_val < 0.15:
 							plant_placement(Vector2i(5, 0), 6, environment_layer, Vector2i(x, y))
-							
+						if 0.15 < point_noise_val and point_noise_val < 0.157:
+							plant_placement(Vector2i(2, 6), 6, environment_layer, Vector2i(x, y))
+						if 0.157 < point_noise_val and point_noise_val < 0.164:
+							plant_placement(Vector2i(0, 3), 6, environment_layer, Vector2i(x, y))
+						if 0.164 < point_noise_val and point_noise_val < 0.17:
+							plant_placement(Vector2i(2, 3), 6, environment_layer, Vector2i(x, y))
+						if 0.17 < point_noise_val and point_noise_val < 0.175:
+							plant_placement(Vector2i(3, 3), 3, environment_layer, Vector2i(x, y))
+						if 0.175 < point_noise_val and point_noise_val < 0.2:
+							plant_placement(Vector2i(0, 2), 3, environment_layer, Vector2i(x, y))
+						if 0.2 < point_noise_val and point_noise_val < 0.21:
+							plant_placement(Vector2i(4, 1), 3, environment_layer, Vector2i(x, y))
+						if 0.21 < point_noise_val and point_noise_val < 0.22:
+							plant_placement(Vector2i(1, 2), 3, environment_layer, Vector2i(x, y))
+						if 0.22 < point_noise_val and point_noise_val < 0.25:
+							plant_placement(Vector2i(3, 2), 3, environment_layer, Vector2i(x, y))
+						if 0.25 < point_noise_val and point_noise_val < 0.27:
+							plant_placement(Vector2i(4, 3), 3, environment_layer, Vector2i(x, y))
+						if 0.27 < point_noise_val and point_noise_val < 0.29:
+							plant_placement(Vector2i(6, 4), 3, environment_layer, Vector2i(x, y))
+						if 0.27 < point_noise_val and point_noise_val < 0.29:
+							plant_placement(Vector2i(6, 4), 3, environment_layer, Vector2i(x, y))
+						if 0.29 < point_noise_val and point_noise_val < 0.295:
+							plant_placement(Vector2i(6, 1), 3, environment_layer, Vector2i(x, y))
 						
 					# placing random weighted grass tiles
 					if world_noise_val > 0.18:
