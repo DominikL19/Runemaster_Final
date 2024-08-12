@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmllisae3tcq8"]
+
+[ext_resource type="Texture2D" uid="uid://qm623aw60t0s" path="res://assets/UI/Icons/wood.png" id="1_00g80"]
+
+[node name="main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 1)
+anchor_mode = 0
+zoom = Vector2(0.605, 0.605)
+
+[node name="Wood" type="Sprite2D" parent="."]
+position = Vector2(1023, 532)
+texture = ExtResource("1_00g80")
