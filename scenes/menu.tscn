@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://df515hn3kp0uf"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_xq585"]
-[ext_resource type="Texture2D" uid="uid://jvi8or754ai" path="res://assets/UI/backgroundColorGrass.png" id="2_rw6m2"]
+[ext_resource type="Texture2D" uid="uid://y6jtimyvxibo" path="res://main_menu/Button_Textures/Screenshot 2024-08-13 153410.png" id="2_s0t4q"]
 [ext_resource type="FontFile" uid="uid://di28j5ankr6xr" path="res://assets/UI/ThaleahFat.ttf" id="3_rnxly"]
 [ext_resource type="Script" path="res://scripts/menu_camera.gd" id="4_wnxen"]
 
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_rw6m2")
+texture = ExtResource("2_s0t4q")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -54,6 +54,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 alignment = 1
 
@@ -113,3 +114,5 @@ text = "Exit"
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource("4_wnxen")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
