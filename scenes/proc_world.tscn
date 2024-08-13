@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bxrdhwpdk0l5m"]
+[gd_scene load_steps=49 format=3 uid="uid://bxrdhwpdk0l5m"]
 
 [ext_resource type="Script" path="res://scenes/proc_world.gd" id="1_dvum6"]
 [ext_resource type="TileSet" uid="uid://dcjwf7qkp62rv" path="res://data/tileset.tres" id="2_lwmi4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b5mssv7v5rccu" path="res://assets/Player/spritesheet_nw.png" id="4_k3wh6"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_w7iaf"]
 [ext_resource type="PackedScene" uid="uid://5vlqbajhlb6s" path="res://scenes/enemy.tscn" id="6_1ohck"]
+[ext_resource type="PackedScene" uid="uid://twaqj3324u2a" path="res://scenes/chicken.tscn" id="7_x3yu1"]
 
 [sub_resource type="Gradient" id="Gradient_flmub"]
 interpolation_mode = 1
@@ -358,3 +359,5 @@ script = ExtResource("5_w7iaf")
 
 [node name="enemy" parent="." instance=ExtResource("6_1ohck")]
 position = Vector2(1, 0)
+
+[node name="chicken" parent="." instance=ExtResource("7_x3yu1")]
