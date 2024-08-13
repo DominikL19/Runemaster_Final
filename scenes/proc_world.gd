@@ -3,7 +3,7 @@ extends Node2D
 @export var noise_height_texture : NoiseTexture2D
 @export var noise_point_texture : NoiseTexture2D
 var world_noise : Noise
-var point_noise : Noise
+var point_noise : Noise  
 
 var width : int = 100
 var height : int = 100
