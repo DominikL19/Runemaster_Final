@@ -1,11 +1,15 @@
-[gd_scene load_steps=48 format=3 uid="uid://bxrdhwpdk0l5m"]
+[gd_scene load_steps=61 format=3 uid="uid://bxrdhwpdk0l5m"]
 
 [ext_resource type="Script" path="res://scenes/proc_world.gd" id="1_dvum6"]
+[ext_resource type="Texture2D" uid="uid://dji3nf0a3midy" path="res://assets/!Sprout_Lands_Pack/Tilesets/ground tiles/water frames/Water.png" id="2_0pee5"]
 [ext_resource type="TileSet" uid="uid://dcjwf7qkp62rv" path="res://data/tileset.tres" id="2_lwmi4"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_omu4u"]
 [ext_resource type="Texture2D" uid="uid://b5mssv7v5rccu" path="res://assets/Player/spritesheet_nw.png" id="4_k3wh6"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_w7iaf"]
 [ext_resource type="PackedScene" uid="uid://5vlqbajhlb6s" path="res://scenes/enemy.tscn" id="6_1ohck"]
+[ext_resource type="Texture2D" uid="uid://fgpj3qmc77hn" path="res://assets/!Sprout_Lands_Pack/Objects/Trees, stumps and bushes.png" id="6_eqr20"]
+[ext_resource type="Shader" path="res://scripts/water_shader.gdshader" id="7_ndpxt"]
+[ext_resource type="Texture2D" uid="uid://ddxyocu4a0k6b" path="res://assets/icon.svg" id="8_hcuhe"]
 
 [sub_resource type="Gradient" id="Gradient_flmub"]
 interpolation_mode = 1
@@ -25,6 +29,107 @@ frequency = 0.3051
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nax57"]
 noise = SubResource("FastNoiseLite_jmq35")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ujeq"]
+texture = ExtResource("2_0pee5")
+0:0/animation_columns = 4
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lr8so"]
+sources/0 = SubResource("TileSetAtlasSource_1ujeq")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r01xj"]
+frequency = 0.0104
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jckbm"]
+seamless = true
+noise = SubResource("FastNoiseLite_r01xj")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lqas6"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vnc6s"]
+seamless = true
+noise = SubResource("FastNoiseLite_lqas6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u5fev"]
+shader = ExtResource("7_ndpxt")
+shader_parameter/scroll1 = Vector2(0.05, 0.05)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strength = 0.023
+shader_parameter/tone_color = Color(0.529412, 0.858824, 1, 0)
+shader_parameter/noise1 = SubResource("NoiseTexture2D_jckbm")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_vnc6s")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yokir"]
+texture = ExtResource("6_eqr20")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ij1iv"]
+sources/0 = SubResource("TileSetAtlasSource_yokir")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6qag"]
 atlas = ExtResource("4_k3wh6")
@@ -306,7 +411,19 @@ script = ExtResource("1_dvum6")
 noise_height_texture = SubResource("NoiseTexture2D_2k771")
 noise_point_texture = SubResource("NoiseTexture2D_nax57")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Water" type="TileMap" parent="."]
+z_index = -2
+tile_set = SubResource("TileSet_lr8so")
+format = 2
+layer_0/name = "water"
+
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_u5fev")
+scale = Vector2(9.51563, 5.67969)
+texture = ExtResource("8_hcuhe")
+
+[node name="Tilemap" type="TileMap" parent="."]
 y_sort_enabled = true
 rotation = 0.00651442
 tile_set = ExtResource("2_lwmi4")
@@ -331,6 +448,10 @@ layer_5/tile_data = PackedInt32Array()
 layer_6/name = "cliff"
 layer_6/y_sort_enabled = true
 layer_6/tile_data = PackedInt32Array()
+
+[node name="Sway" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ij1iv")
+format = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 3
@@ -357,4 +478,11 @@ drag_bottom_margin = 0.25
 script = ExtResource("5_w7iaf")
 
 [node name="enemy" parent="." instance=ExtResource("6_1ohck")]
-position = Vector2(1, 0)
+position = Vector2(2, 0)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+rotation = 0.698132
+color = Color(1, 1, 0.411765, 1)
+energy = 0.1
+shadow_enabled = true
+shadow_filter = 1

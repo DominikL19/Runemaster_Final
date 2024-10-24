@@ -8,7 +8,9 @@ var point_noise : Noise
 var width : int = 100
 var height : int = 100
 
-@onready var tilemap = $TileMap
+@onready var tilemap = $Tilemap
+@onready var tilemap2 = $Water
+@onready var sway_map = $Sway
 
 var source_id = 1
 
@@ -102,12 +104,10 @@ func generate_world():
 					if world_noise_val > 0.3:
 						cliff_tiles_arr.append(Vector2i(x, y))
 						
-				
 				# beach/soil biome
 				soil_tiles_arr.append(Vector2i(x, y))
-
-			# water/ocean
-			tilemap.set_cell(water_layer, Vector2(x, y), 4, water_atlas)
+				
+			tilemap2.set_cell(0, Vector2i(x, y), 0, Vector2i(0, 0))
 			
 	tilemap.set_cells_terrain_connect(ground_layer1, soil_tiles_arr, soil_terrain_int, 0)
 	tilemap.set_cells_terrain_connect(ground_layer2, grass_tiles_arr, grass_terrain_int, 0)
